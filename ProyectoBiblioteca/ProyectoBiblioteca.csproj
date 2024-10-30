@@ -138,11 +138,9 @@
     <Compile Include="Logica\LibroLogica.cs" />
     <Compile Include="Logica\PersonaLogica.cs" />
     <Compile Include="Logica\PrestamoLogica.cs" />
-    <Compile Include="Logica\BibliografiaLogica.cs" />
     <Compile Include="Logica\TipoPersonaLogica.cs" />
     <Compile Include="Logica\Utilidades.cs" />
     <Compile Include="Models\Autor.cs" />
-    <Compile Include="Models\Bibliografia.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Editorial.cs" />
     <Compile Include="Models\EstadoPrestamo.cs" />
@@ -2118,9 +2116,9 @@
     <Content Include="vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Biblioteca\Libros.cshtml" />
-    <Content Include="Views\Biblioteca\Idioma.cshtml" />
+    <Content Include="Views\Biblioteca\Autores.cshtml" />
     <Content Include="Views\Biblioteca\Editorial.cshtml" />
-    <Content Include="Views\Biblioteca\Ciencia.cshtml" />
+    <Content Include="Views\Biblioteca\Categoria.cshtml" />
     <Content Include="Views\Prestamo\Registrar.cshtml" />
     <Content Include="Views\Prestamo\Consultar.cshtml" />
     <Content Include="Views\Persona\Usuarios.cshtml" />
@@ -2136,7 +2134,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Biblioteca\Bibliografia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

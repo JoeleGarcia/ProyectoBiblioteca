@@ -19,7 +19,7 @@ namespace ProyectoBiblioteca.Controllers
             return View();
         }
 
-        public ActionResult Idioma()
+        public ActionResult Autores()
         {
             return View();
         }
@@ -29,12 +29,7 @@ namespace ProyectoBiblioteca.Controllers
             return View();
         }
 
-        public ActionResult Ciencia()
-        {
-            return View();
-        }
-
-        public ActionResult Bibliografia()
+        public ActionResult Categoria()
         {
             return View();
         }
@@ -61,33 +56,7 @@ namespace ProyectoBiblioteca.Controllers
             return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
         }
 
-        /*Tipo
-         * Bibliografia*/
 
-        [HttpGet]
-        public JsonResult ListarBibliografia()
-        {
-            List<Bibliografia> oLista = new List<Bibliografia>();
-            oLista = BibliografiaLogica.Instancia.Listar();
-            return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
-        }
-        [HttpPost]
-        public JsonResult GuardarBibliografia(Bibliografia objeto)
-        {
-            bool respuesta = false;
-            respuesta = (objeto.IdBibliografia == 0) ? BibliografiaLogica.Instancia.Registrar(objeto) : BibliografiaLogica.Instancia.Modificar(objeto);
-            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
-        }
-        [HttpPost]
-        public JsonResult EliminarBibliografia(int id)
-        {
-            bool respuesta = false;
-            respuesta = BibliografiaLogica.Instancia.Eliminar(id);
-            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
-        }
-
-
-        /**/
 
         [HttpGet]
         public JsonResult ListarEditorial()

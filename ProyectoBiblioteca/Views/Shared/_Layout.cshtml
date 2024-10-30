@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Gestion Biblioteca</title>
+    <title>SB Admin 2 - Blank</title>
     @Styles.Render("~/Content/css")
     <style>
         .dt-bootstrap4 {
@@ -24,16 +24,40 @@
         <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index", "Admin")">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-book"></i>
+                </div>
                 <div class="sidebar-brand-text mx-3">Gestion de Biblioteca</div>
             </a>
-       
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <!-- Nav Item - Dashboard -->
+            @*<li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Admin")">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>*@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Heading -->
             <div class="sidebar-heading">
                 Gestion
             </div>
-   
+            <!-- Nav Item - Pages Collapse Menu -->
+            @*<li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-list"></i>
+                    <span>Prestamos</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="@Url.Action("Registrar", "Prestamo")">Regitrar</a>
+                        <a class="collapse-item" href="@Url.Action("Consultar", "Prestamo")">Consultar</a>
+                    </div>
+                </div>
+            </li>*@
             <!-- Nav Item - Utilities Collapse Menu -->
             @{ if (objeto.oTipoPersona.IdTipoPersona == 1)
                 {
@@ -45,21 +69,39 @@
                         </a>
                         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                              data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Mantenimiento:</h6>
-                                @*<a class="collapse-item" href="@Url.Action("Libros", "Biblioteca")">Libros</a>*@
-                                <a class="collapse-item" href="@Url.Action("Bibliografia", "Biblioteca")">Bibliografia</a>
-                                <a class="collapse-item" href="@Url.Action("Editorial", "Biblioteca")">Editoras</a>
-                                <a class="collapse-item" href="@Url.Action("Ciencia", "Biblioteca")">Ciencias</a>
-                                <a class="collapse-item" href="@Url.Action("Idioma", "Biblioteca")">Idiomas</a>
-
-                            </div>
+                                        <div class="bg-white py-2 collapse-inner rounded">
+                                            <h6 class="collapse-header">Mantenimientos</h6>
+                                            <a class="collapse-item" href="@Url.Action("Bibliografia", "Biblioteca")">Bibliografia</a>
+                                            <a class="collapse-item" href="@Url.Action("Idioma", "Biblioteca")">Idioma</a>
+                                            <a class="collapse-item" href="@Url.Action("Libros", "Biblioteca")">Libros</a>
+                                            <a class="collapse-item" href="@Url.Action("Autores", "Biblioteca")">Autores</a>
+                                            <a class="collapse-item" href="@Url.Action("Editorial", "Biblioteca")">Editorial</a>
+                                            <a class="collapse-item" href="@Url.Action("Categoria", "Biblioteca")">Categoria</a>
+                                        </div>
                         </div>
                     </li>
                 }
             }
 
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+                   aria-controls="collapsePages">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Personas</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Manejo de Usuarios</h6>
+                        @{if (objeto.oTipoPersona.IdTipoPersona == 1)
+                            {
+                                <a class="collapse-item" href="@Url.Action("Usuarios","Persona")">Usuarios</a>
+                            }
+                        }
+                        <a class="collapse-item" href="@Url.Action("Lectores","Persona")">Lectores</a>
+                    </div>
+                </div>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <!-- Sidebar Toggler (Sidebar) -->
@@ -111,7 +153,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">@(objeto.Nombre + " " + objeto.Apellido )</span>
-                                <i class="fas fa-user" style="font-size:25px;font-weight:bold"></i>
+                                <i class="fas fa-user-shield" style="font-size:25px;font-weight:bold"></i>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -136,7 +178,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Proyecto Gestion de Biblioteca | Materia ISO605</span>
+                        <span>Proyecto Gestion de Biblioteca &copy; | Materia ISO605</span>
                     </div>
                 </div>
             </footer>
